@@ -5,6 +5,8 @@ public class Tre_i_rad {
 
     public static void main(String[] args) {
 
+        boolean end = false;
+
         int[] arr;
         arr = new int[9];
 
@@ -20,9 +22,31 @@ public class Tre_i_rad {
 
         System.out.println(java.util.Arrays.toString(arr));
 
-        Scanner move = new Scanner(System.in);
+         do {
 
+            Scanner move1 = new Scanner(System.in);
+            System.out.println("Spelare 1 vilket tal ska ändras?");
+            int input = move1.nextInt();
+            arr[input - 1] = 0;
+            System.out.println(java.util.Arrays.toString(arr));
 
+            Scanner move2 = new Scanner(System.in);
+            System.out.println("Spelare 2 vilket tal ska ändras?");
+            int input2 = move2.nextInt();
+            arr[input2 - 1] = 0;
+            System.out.println(java.util.Arrays.toString(arr));
+
+             if (Arrays.asList(arr).contains(0)) {
+                end = true;
+             }
+                else {
+                    System.out.println("continue");
+             }
+
+         } while(end == false);
+
+            System.out.println("End");
+
+        }
 
     }
-}
